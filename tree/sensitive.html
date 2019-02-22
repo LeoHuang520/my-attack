@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<title>敏感数据路径</title>
+<link rel="stylesheet" href="common/css/vis.css"/>
+<link rel="stylesheet" href="common/css/jquery.mCustomScrollbar.css">
+<link rel="stylesheet" href="css/attack.css"/>
+</head>
+<body>
+
+<div id="container" class="m-container"></div>
+<div class="m-legend" id="m-legend">
+	<div class="m-legend-vackbot">
+		<span class="m-icon root"></span>
+		<span class="m-legend-text">vackbot</span>
+		<span class="m-legend-arrow" id="m-legend-arrow"></span>
+	</div>
+	<ul id="m-content-list" class="m-content-list">
+		<div id="m-content-list-inner"></div>
+	</ul>
+</div>
+<script type="text/html" id="m-content-item-list">
+    {{each data as info i}}
+    <li class="m-content-item js-content-item" data-type="{{data[i].type}}">
+		<span class="m-icon {{data[i].type}}"></span>
+		<span class="m-legend-text">
+			<span class="m-legend-text-name" title="{{data[i].name}}">{{data[i].name}}</span>
+			<span class="m-legend-text-mark">:</span>
+		</span>
+		<span class="m-legend-count">{{data[i].count}}</span>  
+    </li>
+    <div class="m-devision"></div>
+    {{/each}}
+</script>
+<script src="common/js/jquery.min.js"></script>
+<script src="common/js/vis.js"></script>
+<!-- <script src="common/js/vis.min.js"></script> -->
+<script src="common/js/socket.io.js"></script>
+<script src="common/js/template-web.js"></script>
+<script src="common/js/xss.min.js"></script>
+<script src="common/js/jquery.mCustomScrollbar.js"></script>
+<script>
+	var gMyAction = {};
+</script>
+<script src="js/flyline.js"></script>
+<script src="js/network.js"></script>
+<script src="js/legend.js"></script>
+<script src="js/sensitive.js"></script>
+</body>
+</html>
